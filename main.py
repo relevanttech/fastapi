@@ -11,8 +11,9 @@ def home():
     return {"Hello": "World from FastAPI"}
 
 @app.post("/demo")
-def demo(request: Request):
-    print(await request.json())
+async def demo(request: Request):
+    data = await request.json()
+    print(data)
     return {"Hello": "World from FastAPI"}
 
 # get random number between min(default:0) and max(default:9)

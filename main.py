@@ -1,6 +1,6 @@
 import os
 from typing import Optional
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 import uvicorn
 import random
 
@@ -8,6 +8,11 @@ app = FastAPI()
 
 @app.get("/")
 def home():
+    return {"Hello": "World from FastAPI"}
+
+@app.post("/demo")
+def demo(request: Request)):
+    print(request.json())
     return {"Hello": "World from FastAPI"}
 
 # get random number between min(default:0) and max(default:9)

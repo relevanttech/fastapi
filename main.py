@@ -11,7 +11,7 @@ def home():
     return {"Hello": "World from FastAPI"}
 
 @app.post("/demo")
-def demo(request: Request)):
+def demo(request: Request):
     print(request.json())
     return {"Hello": "World from FastAPI"}
 

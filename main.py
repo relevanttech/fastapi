@@ -12,7 +12,7 @@ def home():
 
 @app.post("/demo")
 def demo(request: Request):
-    print(request.json())
+    print(await request.json())
     return {"Hello": "World from FastAPI"}
 
 # get random number between min(default:0) and max(default:9)
